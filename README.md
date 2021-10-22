@@ -4,4 +4,5 @@
 
 ## 参考サイト
 
+- [API Reference - Chrome Developers](https://developer.chrome.com/docs/extensions/reference/)
 - [Chrome拡張機能の作り方。誰でもかんたんに開発できる！](https://original-game.com/how-to-make-chrome-extensions/)
