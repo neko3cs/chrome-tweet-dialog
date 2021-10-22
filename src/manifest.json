@@ -1,0 +1,14 @@
+{
+  "name": "Chrome Tweet Dialog",
+  "version": "1.0",
+  "description": "Show dialog when you tweet!",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {}
+}
