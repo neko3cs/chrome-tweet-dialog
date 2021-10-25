@@ -1,8 +1,15 @@
 const confirmTweet = () => {
-  confirm('投稿します。よろしいですか？');
+  return confirm('投稿します。よろしいですか？');
 };
 
-const div = document.querySelector('div[data-testid="tweetButtonInline"]');
-if (div) {
-  div.addEventListener('click', confirmTweet);
-}
+const onLoad = () => {
+  const tweetButton = document.querySelector('div[data-testid="tweetButtonInline"]');
+  if (tweetButton) {
+    console.log('ボタン見つけた！ダイアログを埋め込むね！');
+    tweetButton.addEventListener('click', confirmTweet);
+  } else {
+    console.log('ボタン見つからなかった！');
+  }
+};
+
+window.addEventListener('load', onLoad);
