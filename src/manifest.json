@@ -10,7 +10,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://twitter.com/*"
+        "https://twitter.com/*",
+        "file:///C:/src/chrome-tweet-dialog/src/index.html"
       ],
       "js": [
         "content.js"
