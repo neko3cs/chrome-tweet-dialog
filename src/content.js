@@ -5,6 +5,7 @@ const confirmTweet = (e) => {
 };
 
 const setAlertToTweetButton = () => {
+  // TODO: なんか見つからない時があるので取り方を考える
   const tweetButton = document.querySelector('div[data-testid="tweetButtonInline"]');
   if (tweetButton) {
     console.log('ボタン見つけた！ダイアログを埋め込むね！');
@@ -14,19 +15,8 @@ const setAlertToTweetButton = () => {
   }
 };
 
-const setAlertToAlertButton = () => {
-  const alertButton = document.querySelector('button#alertButton');
-  if (alertButton) {
-    console.log('ボタン見つけた！ダイアログを埋め込むね！');
-    alertButton.addEventListener('click', confirmTweet, { capture: true });
-  } else {
-    console.log('ボタン見つからなかった！');
-  }
-};
-
 const onLoad = () => {
   setAlertToTweetButton();
-  // setAlertToAlertButton();
 };
 
 window.addEventListener('load', onLoad);
