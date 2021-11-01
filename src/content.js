@@ -2,21 +2,20 @@ const confirmTweet = (e) => {
   if (confirm('投稿します。よろしいですか？') === false) {
     e.stopPropagation();
   }
+  setDialogToTweetButton();  // TODO: 何故か再設定されない->直す
 };
 
-const setAlertToTweetButton = () => {
+const setDialogToTweetButton = () => {
   // TODO: なんか見つからない時があるので取り方を考える
   const tweetButton = document.querySelector('div[data-testid="tweetButtonInline"]');
-  if (tweetButton) {
-    console.log('ボタン見つけた！ダイアログを埋め込むね！');
-    tweetButton.addEventListener('click', confirmTweet, { capture: true });
-  } else {
-    console.log('ボタン見つからなかった！');
+  if (tweetButton === null) {
+    throw ('Can not get tweet button element!');
   }
+  tweetButton.addEventListener('click', confirmTweet, { capture: true });
 };
 
 const onLoad = () => {
-  setAlertToTweetButton();
+  setDialogToTweetButton();
 };
 
 window.addEventListener('load', onLoad);
