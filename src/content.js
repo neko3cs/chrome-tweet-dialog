@@ -4,6 +4,7 @@ const confirmTweet = (e) => {
   if (confirm('投稿します。よろしいですか？') === false) {
     e.stopPropagation();
   }
+  setConfirmToTweetButton();
 };
 
 const setConfirmToTweetButton = () => {
