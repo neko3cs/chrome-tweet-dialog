@@ -1,19 +1,21 @@
+'use strict';
+
 const confirmTweet = (e) => {
   if (confirm('投稿します。よろしいですか？') === false) {
     e.stopPropagation();
   }
 };
 
+let setIntervalId = 0;
 const setConfirmToTweetButton = () => {
   const tweetButton = document.querySelector('div[data-testid="tweetButtonInline"]');
   if (tweetButton === null) {
-    throw ('Can not get tweet button element!');
+    return;
   }
-  tweetButton.addEventListener('click', confirmTweet, {
-    once: false,
-    passive: true,
-    capture: true
-  });
+  tweetButton.addEventListener('click', confirmTweet, { capture: true });
+  clearInterval(setIntervalId);
 };
 
-window.addEventListener('load', setConfirmToTweetButton);
+window.addEventListener('load', () => {
+  setIntervalId = setInterval(setConfirmToTweetButton, 1000);
+});
