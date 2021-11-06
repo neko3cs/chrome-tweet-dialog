@@ -6,16 +6,19 @@ const confirmTweet = (e) => {
   }
 };
 
-let setIntervalId = 0;
 const setConfirmToTweetButton = () => {
-  const tweetButton = document.querySelector('div[data-testid="tweetButtonInline"]');
-  if (tweetButton === null) {
-    return;
-  }
-  tweetButton.addEventListener('click', confirmTweet, { capture: true });
-  clearInterval(setIntervalId);
+  let setIntervalId = 0;
+
+  const innerMethod = () => {
+    const tweetButton = document.querySelector('div[data-testid="tweetButtonInline"]');
+    if (tweetButton === null) {
+      return;
+    }
+    tweetButton.addEventListener('click', confirmTweet, { capture: true });
+    clearInterval(setIntervalId);
+  };
+
+  setIntervalId = setInterval(innerMethod, 1000);
 };
 
-window.addEventListener('load', () => {
-  setIntervalId = setInterval(setConfirmToTweetButton, 1000);
-});
+window.addEventListener('load', setConfirmToTweetButton);
