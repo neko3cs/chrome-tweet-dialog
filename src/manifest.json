@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Chrome Tweet Dialog",
   "version": "1.0",
-  "description": "Show dialog when you tweet!",
+  "description": "Twitter Webにて「ツイートをする」ボタンを押したときに確認ダイアログを表示してくれます。",
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
