@@ -1,8 +1,13 @@
 {
+  "manifest_version": 3,
   "name": "Chrome Tweet Dialog",
   "version": "1.0",
   "description": "Show dialog when you tweet!",
-  "manifest_version": 3,
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
   "content_scripts": [
     {
       "matches": [
